@@ -1,0 +1,2 @@
+lua51-luv 465
+variants {debug universal} depends_build path:bin/cmake:cmake portdir devel/lua51-luv description {Bare libuv bindings for lua 5.1} homepage https://github.com/luvit/luv epoch 0 platforms darwin name lua51-luv depends_lib {port:libuv port:lua51} license Apache-2 maintainers {gmail.com:gasol.wu openmaintainer} long_description {libuv bindings for luajit and lua 5.1. This library makes libuv available to lua scripts.} categories devel version 1.32.0-0 revision 0
