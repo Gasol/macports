@@ -3,7 +3,7 @@ PortGroup           github 1.0
 
 name                vim82
 set vim_version     8.2
-set vim_patchlevel  0901
+set vim_patchlevel  1359
 github.setup        vim vim ${vim_version}.${vim_patchlevel} v
 categories          editors
 platforms           darwin freebsd
@@ -17,9 +17,9 @@ long_description \
 
 homepage            http://www.vim.org/
 
-checksums           rmd160  c6bb03f43e5765531f1f408e046246b166a5f0c0 \
-                    sha256  434c1b3f31dc2d6f22261e66453c8d6be55c41083bbda5535646dcaa69838514 \
-                    size    14991115
+checksums           rmd160  64f901dc2b802b55fc8c4a9b95ce48032325e71e \
+                    sha256  df615a99b9e270025daa570b24c67ce04a1e356eb1c4efe4500db619180abb3a \
+                    size    15079614
 
 depends_lib         port:ncurses \
                     port:gettext \
