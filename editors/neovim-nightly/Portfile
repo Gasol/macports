@@ -1,0 +1,57 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem 1.0
+PortGroup github 1.0
+PortGroup cmake 1.0
+
+name                    neovim-nightly
+github.setup            neovim neovim 1153ac9
+categories              editors
+platforms               darwin
+maintainers             gmail.com:gaosl.wu openmaintainer
+license                 Apache-2 Vim GPL-2+
+
+description             Neovim is a aggressively refactored fork of Vim
+
+long_description \
+    Neovim is a project that seeks to aggressively refactor Vim. It already adds \
+    a new plugin architecture, job control, and a remote API.
+
+homepage                https://neovim.io
+
+
+checksums               rmd160  2fd2a9d4640c7c561e34dc67ee8154d7673dabc5 \
+                        sha256  17bd1dac932fa1326bf0b316bb53f09cf7685b0a914f0599fc7c10d609a31185 \
+                        size    9897766
+
+depends_build-append    port:pkgconfig
+
+depends_lib             port:gettext \
+                        port:libuv \
+                        port:libvterm \
+                        port:libtermkey \
+                        port:unibilium \
+                        port:jemalloc \
+                        port:msgpack2 \
+                        port:luajit \
+                        port:lua51 \
+                        port:lua51-lpeg \
+                        port:lua51-mpack \
+                        port:lua51-luabitop \
+                        port:lua51-luv
+
+cmake.out_of_source     yes
+use_parallel_build      no
+
+configure.args-append   -DUSE_BUNDLED=OFF \
+                        -DPREFER_LUA=ON \
+                        -DLUA_PRG=${prefix}/bin/lua5.1 \
+                        -DENABLE_JEMALLOC=ON \
+                        -DLUA_LIBRARIES=${prefix}/lib/lua-5.1/liblua-5.1.dylib
+
+notes {
+    If you want to share your existing Vim configuration with Neovim, you can add these symlinks:
+        ln -s ~/.vim ~/.config/nvim
+        ln -s ~/.vimrc ~/.config/nvim/init.vim
+    For possible incompatible changes and differences to Vim check ':help nvim-intro' in nvim.
+}
