@@ -1,0 +1,17 @@
+--- dist.info.orig	2020-08-03 11:58:26.000000000 +0800
++++ dist.info	2020-08-03 11:58:39.000000000 +0800
+@@ -1,6 +1,6 @@
+ --- This dist file is part of LuaDist project
+ 
+-name="luabitop"
++name="lua51-luabitop"
+ version="1.0.2"
+ 
+ desc = "Lua Bit Operations Module by Mile Pall"
+@@ -10,5 +10,5 @@
+ maintainer = "Peter Drahoš"
+ 
+ depends = {
+-	"lua >= 5.1"
++	"lua = 5.1"
+ }
